@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AUCA.DAL\AUCA.DAL.csproj" />
+    <ProjectReference Include="..\AUCA.Domain\AUCA.Domain.csproj" />
+    <ProjectReference Include="..\AUCA.Interface\AUCA.Interface.csproj" />
+  </ItemGroup>
+
+</Project>

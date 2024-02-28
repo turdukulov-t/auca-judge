@@ -1,0 +1,26 @@
+version: '3.4'
+
+networks:
+  aucanetwork:  
+
+services:
+  aucadb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+        - 8003:1433
+    environment:
+        - ACCEPT_EULA=Y
+        - MSSQL_SA_PASSWORD=abAuca123#
+    networks:
+        - aucanetwork
+  auca:
+    ports:
+        - 8002:80
+    image: ${DOCKER_REGISTRY-}auca
+    build:
+      context: .
+      dockerfile: AUCA/Dockerfile
+    depends_on:
+        - aucadb
+    networks:
+        - aucanetwork
