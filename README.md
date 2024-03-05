@@ -1,0 +1,8 @@
+A C# Back-End for an Online Judge System, leveraging ASP.NET, Microsoft SQL Server (MS SQL), and Entity Framework (EF), provides a robust foundation for managing the server-side logic, data storage, and interaction with the database. Here's a breakdown of each component:
+
+ASP.NET: ASP.NET provides the framework for building web applications and services using C#. It offers various features like routing, middleware, and HTTP request handling, making it suitable for developing the backend of an Online Judge System. ASP.NET also supports building RESTful APIs, which can be utilized to communicate with the front-end and handle user requests efficiently.
+
+MS SQL Server (MS SQL): MS SQL Server is a relational database management system (RDBMS) developed by Microsoft. It offers a robust and scalable platform for storing and managing data in a structured format. In the context of an Online Judge System, MS SQL can be used to store information such as user profiles, problem statements, submissions, test cases, and results. It supports complex queries, transactions, and indexing, ensuring optimal performance and data integrity.
+
+Entity Framework (EF): Entity Framework is an object-relational mapping (ORM) framework provided by Microsoft. It simplifies data access by enabling developers to work with database objects as .NET objects directly. EF abstracts the database interactions, allowing developers to focus on application logic rather than low-level database operations. With EF, you can define data models, relationships, and mappings using C# classes and attributes, and EF takes care of generating the necessary SQL queries and managing the database connections.
+
