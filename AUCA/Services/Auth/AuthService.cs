@@ -25,7 +25,6 @@ namespace BusinessBanking.Services.Auth
         {
             var isValid = await IsUserValid(login, password);
 
-
             if (isValid)
             {
                 var user = await _userService.GetUserByLogin(login);

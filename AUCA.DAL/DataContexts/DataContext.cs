@@ -1,4 +1,5 @@
-﻿using BusinessBanking.Domain.Entity;
+﻿using AUCA.Domain.Entity;
+using BusinessBanking.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace BusinessBanking.DAL.DataContexts
@@ -29,5 +30,11 @@ namespace BusinessBanking.DAL.DataContexts
         }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Difficulty> Difficulties { get; set; }
+
+        public DbSet<Submission> Submissions { get; set; }
+
+        public DbSet<Problem> Problems { get; set; }
     }
 }
