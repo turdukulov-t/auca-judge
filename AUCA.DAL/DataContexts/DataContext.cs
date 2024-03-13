@@ -36,5 +36,7 @@ namespace BusinessBanking.DAL.DataContexts
         public DbSet<Submission> Submissions { get; set; }
 
         public DbSet<Problem> Problems { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
     }
 }

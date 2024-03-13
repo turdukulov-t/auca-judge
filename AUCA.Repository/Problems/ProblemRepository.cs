@@ -1,46 +1,17 @@
-﻿using AUCA.Domain.Entity;
-using AUCA.Domain.Exceptions;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using AUCA.Domain.Entity;
 using AUCA.Interface.Repositories;
+using AUCA.Repository.Base;
 using BusinessBanking.DAL.DataContexts;
-using BusinessBanking.Interface.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace AUCA.Repository.Problems;
-public class ProblemRepository : IBaseRepository<Problem>
+public class ProblemRepository : BaseRepository<Problem>, IProblemRepository
 {
-	private DataContext Context { get; set; }
-
-	public ProblemRepository(DataContext context)
+	public ProblemRepository(DataContext context) : base(context)
 	{
-		Context = context;
-	}
-
-	public IQueryable<Problem> GetAll()
-	{
-		return Context.Set<Problem>().AsQueryable();
-	}
-
-	public async Task<Problem> GetProblemById(string id)
-	{
-		var problem = await Context.Set<Problem>().FirstOrDefaultAsync(x => x.Id == id);
-		
-		if (problem == null)
-		{
-			throw new InnerException("No problem found by this Id", 1);
-		}
-
-		return problem;
-	}
-
-	public async Task<Problem> GetProblemByName(string name)
-	{
-		var problem = await Context.Set<Problem>().FirstOrDefaultAsync(x => x.Name == name);
-
-		if (problem == null)
-		{
-			throw new InnerException("No problem found by this name", 2);
-		}
-
-		return problem;
 	}
 }

@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace AUCA.Domain.Entity;
 public class Problem
 {
-	public string Id { get; set; }
+	public string Id { get; set; } = Guid.NewGuid().ToString();
 
 	[MaxLength(256)]
 	public string Name { get; set; }
