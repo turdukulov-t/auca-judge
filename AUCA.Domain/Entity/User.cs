@@ -23,5 +23,7 @@ namespace BusinessBanking.Domain.Entity
         public DateTime CreatedDate { get; set; }
         [Column("IsEnabled", Order = 6, TypeName = "bit")]
         public bool IsEnabled { get; set; }
+        [Column("Email", Order = 7, TypeName = "varchar(255)")]
+        public string Email { get; set; }
     }
 }

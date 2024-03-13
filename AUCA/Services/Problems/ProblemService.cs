@@ -4,7 +4,6 @@ using AUCA.Domain.Entity;
 using AUCA.Interface.Services.Problems;
 using BusinessBanking.Interface.Repositories;
 using Mapster;
-using Microsoft.EntityFrameworkCore;
 
 namespace AUCA.Services.Problems
 {
@@ -19,7 +18,9 @@ namespace AUCA.Services.Problems
 
 		public async Task<List<Problem>> GetProblems()
 		{
-			return await Repository.GetAll().ToListAsync();
+			var problems = await Repository.GetAll<Problem>();
+
+			return problems.ToList();
 		}
 
 		public async Task<Problem> GetByIdAsync(string id)

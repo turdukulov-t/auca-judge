@@ -23,11 +23,6 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
 		DbSet = Context.Set<TEntity>();
 	}
 
-	public IQueryable<TEntity> GetAll()
-	{
-		throw new NotImplementedException();
-	}
-
 	public async Task<IQueryable<TEntity>> GetAll<TEntity>(Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null)
 	{
 		IQueryable<TEntity> query = DbSet.AsQueryable() as IQueryable<TEntity>;
