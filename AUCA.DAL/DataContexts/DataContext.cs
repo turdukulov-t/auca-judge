@@ -13,8 +13,8 @@ namespace BusinessBanking.DAL.DataContexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
-                .HasAlternateKey(u => u.Login);
+            //modelBuilder.Entity<User>()
+            //    .HasAlternateKey(u => u.Login);
 
             modelBuilder.Entity<User>().HasData(new User[] {
                 new User
@@ -24,7 +24,8 @@ namespace BusinessBanking.DAL.DataContexts
                     Login = "user",
                     Password = "ee11cbb19052e40b07aac0ca060c23ee",
                     CreatedDate = DateTime.Now,
-                    IsEnabled = true
+                    IsEnabled = true,
+                    Email = "admin@auca.kg"
                 },
             });
         }

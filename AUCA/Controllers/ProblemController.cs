@@ -2,10 +2,12 @@
 using AUCA.Domain.DTO.Problems;
 using AUCA.Domain.Entity;
 using AUCA.Interface.Services.Problems;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AUCA.Controllers
 {
+	[Authorize]
 	[Route("api/[controller]")]
 	[ApiController]
 	public class ProblemController : ControllerBase

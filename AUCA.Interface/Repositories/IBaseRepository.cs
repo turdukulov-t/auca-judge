@@ -11,8 +11,6 @@ namespace BusinessBanking.Interface.Repositories
 {
     public interface IBaseRepository<TEntity>
     {
-        IQueryable<TEntity> GetAll();
-
         Task<IQueryable<TEntity>> GetAll<TEntity>(
 	        Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null);
 

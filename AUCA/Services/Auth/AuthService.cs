@@ -1,4 +1,5 @@
-﻿using BusinessBanking.Domain.Entity;
+﻿using AUCA.Utils;
+using BusinessBanking.Domain.Entity;
 using BusinessBanking.Interface.Services.Auth;
 using BusinessBanking.Interface.Services.Users;
 using Microsoft.Extensions.Configuration;
@@ -29,10 +30,7 @@ namespace BusinessBanking.Services.Auth
             {
                 var user = await _userService.GetUserByLogin(login);
 
-                // TODO: Add null handling
-
                 var universityID = user.UniversityID;
-
 
                 List<Claim> claims = new List<Claim>
                 {
@@ -70,27 +68,13 @@ namespace BusinessBanking.Services.Auth
         {
             var user = await _userService.GetUserByLogin(login);
 
-            if (user == null)
+            if (user == null || !user.IsEnabled)
             {
                 return false;
             }
 
-            var encrypted = Encrypt(password);
+            var encrypted = Encryption.Encrypt(password);
             return user.Password == encrypted;
-        }
-
-        private string Encrypt(string password)
-        {
-            using (var md5 = MD5.Create())
-            {
-                byte[] data = md5.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder sBuilder = new StringBuilder();
-                for (int i = 0; i < data.Length; i++)
-                {
-                    sBuilder.Append(data[i].ToString("x2"));
-                }
-                return sBuilder.ToString();
-            }
         }
     }
 }

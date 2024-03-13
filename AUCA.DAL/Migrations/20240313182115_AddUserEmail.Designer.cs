@@ -4,6 +4,7 @@ using BusinessBanking.DAL.DataContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BusinessBanking.DAL.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240313182115_AddUserEmail")]
+    partial class AddUserEmail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,13 +158,15 @@ namespace BusinessBanking.DAL.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasAlternateKey("Login");
+
                     b.ToTable("Users");
 
                     b.HasData(
                         new
                         {
                             ID = 1,
-                            CreatedDate = new DateTime(2024, 3, 14, 1, 15, 3, 587, DateTimeKind.Local).AddTicks(5473),
+                            CreatedDate = new DateTime(2024, 3, 14, 0, 21, 15, 787, DateTimeKind.Local).AddTicks(1691),
                             Email = "admin@auca.kg",
                             IsEnabled = true,
                             Login = "user",
