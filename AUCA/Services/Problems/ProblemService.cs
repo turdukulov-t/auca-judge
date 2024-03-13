@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using AUCA.Domain.DTO.Problems;
 using AUCA.Domain.Entity;
 using AUCA.Interface.Services.Problems;
