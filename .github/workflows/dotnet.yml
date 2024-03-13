@@ -3,11 +3,7 @@
 
 name: .NET
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -24,3 +20,5 @@ jobs:
       run: dotnet restore ./AUCA/AUCA.csproj
     - name: Build
       run: dotnet build ./AUCA/AUCA.csproj --no-restore
+    - name: Test
+      run: dotnet test ./AuthService.Tests/
