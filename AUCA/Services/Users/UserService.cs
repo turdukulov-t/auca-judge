@@ -1,4 +1,6 @@
-﻿using BusinessBanking.Domain.Entity;
+﻿using System.Net;
+using AUCA.Domain.DTO.Problems;
+using BusinessBanking.Domain.Entity;
 using BusinessBanking.Interface.Repositories;
 using BusinessBanking.Interface.Services.Users;
 using Microsoft.EntityFrameworkCore;

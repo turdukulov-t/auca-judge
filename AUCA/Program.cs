@@ -6,10 +6,8 @@ using BusinessBanking.Interface.Services.Users;
 using BusinessBanking.Repository.Users;
 using BusinessBanking.Services.Auth;
 using BusinessBanking.Services.Users;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 

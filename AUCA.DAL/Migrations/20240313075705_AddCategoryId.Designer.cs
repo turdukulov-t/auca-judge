@@ -4,6 +4,7 @@ using BusinessBanking.DAL.DataContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BusinessBanking.DAL.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240313075705_AddCategoryId")]
+    partial class AddCategoryId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +39,7 @@ namespace BusinessBanking.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("AUCA.Domain.Entity.Difficulty", b =>
@@ -157,7 +160,7 @@ namespace BusinessBanking.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            CreatedDate = new DateTime(2024, 3, 13, 14, 3, 12, 317, DateTimeKind.Local).AddTicks(252),
+                            CreatedDate = new DateTime(2024, 3, 13, 13, 57, 5, 5, DateTimeKind.Local).AddTicks(6836),
                             IsEnabled = true,
                             Login = "user",
                             Password = "ee11cbb19052e40b07aac0ca060c23ee",
